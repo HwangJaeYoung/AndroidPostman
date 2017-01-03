@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/rl_request_list"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:background="#fff" >
+
+        <TextView
+            android:id="@+id/tv_request_list_op"
+            android:layout_width="45dp"
+            android:layout_height="16dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="16dp"
+            android:text="POST"
+            android:textColor="#81d328"/>
+
+        <TextView
+            android:id="@+id/tv_request_list_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/tv_request_list_op"
+            android:text="CSEBase 리소스 조회"
+            android:textColor="#323a45"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+</LinearLayout>
