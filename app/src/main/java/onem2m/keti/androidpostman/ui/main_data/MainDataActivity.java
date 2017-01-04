@@ -119,7 +119,6 @@ public class MainDataActivity extends Activity implements ViewForMainDataActivit
 
             mDbManager.update(updateRowValue, "requestnumber=" + requestKeyValue, null);
 
-            view.releaseSavingSubmitButton();
             Toast.makeText(getApplicationContext(), "Request resource is updated", Toast.LENGTH_SHORT).show();
             cursor.close();
 
@@ -153,7 +152,6 @@ public class MainDataActivity extends Activity implements ViewForMainDataActivit
 
             mDbManager.insert( addRowValue );
 
-            view.releaseSavingSubmitButton();
             Toast.makeText(getApplicationContext(), "Request resource is inserted", Toast.LENGTH_SHORT).show();
             cursor.close();
         }

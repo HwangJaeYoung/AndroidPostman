@@ -203,7 +203,6 @@
                         android:textColorHint="#b0bac8" />
                 </LinearLayout>
             </LinearLayout>
-
         </LinearLayout>
 
         <LinearLayout
@@ -223,7 +222,7 @@
                 android:gravity="center"
                 android:layout_margin="1dp">
 
-                <onem2m.keti.androidpostman.reuse.widget.SubmitButton
+                <Button
                     android:id="@+id/bt_saving_data"
                     android:layout_width="150dp"
                     android:layout_height="50dp"

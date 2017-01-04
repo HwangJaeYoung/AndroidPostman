@@ -52,7 +52,7 @@ public class ViewForMainDataActivity extends AbstractViewForActivity {
     private SubmitButton btSendRequest;
 
     // Saving Data
-    private SubmitButton btSavingData;
+    private Button btSavingData;
 
     // URL
     private EditText etUrlWindow;
@@ -88,14 +88,9 @@ public class ViewForMainDataActivity extends AbstractViewForActivity {
         etBodyWindow = (EditText)findViewById(R.id.et_body_window);
 
         // Saving & Sending
-        btSavingData = (SubmitButton) findViewById(R.id.bt_saving_data);
+        btSavingData = (Button) findViewById(R.id.bt_saving_data);
         btSendRequest = (SubmitButton) findViewById(R.id.bt_send_request);
-
-        btSavingData.init((ProgressBar)findViewById(R.id.pg_saving_progress));
-        btSavingData.addViewToHold(btSendRequest);
-
         btSendRequest.init((ProgressBar)findViewById(R.id.pg_send_progress));
-        btSendRequest.addViewToHold(btSavingData);
 
         // URL
         etUrlWindow = (EditText)findViewById(R.id.et_url_window);
@@ -127,7 +122,7 @@ public class ViewForMainDataActivity extends AbstractViewForActivity {
             @Override
             public void onClick(View v) {
                 /*** Collecting the all information about oneM2M ***/
-
+                Log.i("testing", "send data button");
                 // Operation
                 String operationItem = operation;
 
@@ -145,10 +140,11 @@ public class ViewForMainDataActivity extends AbstractViewForActivity {
         });
 
         btSavingData.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 /*** Collecting the all information about oneM2M ***/
-
+                Log.i("testing", "saving data button");
                 // Operation
                 String operationItem = operation;
 
@@ -301,10 +297,6 @@ public class ViewForMainDataActivity extends AbstractViewForActivity {
 
     public void releaseSendSubmitButton() {
         this.btSendRequest.release();
-    }
-
-    public void releaseSavingSubmitButton() {
-        this.btSavingData.release();
     }
 
     interface Controller {
