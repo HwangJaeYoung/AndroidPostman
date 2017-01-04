@@ -120,7 +120,7 @@ public class MainDataActivity extends Activity implements ViewForMainDataActivit
             mDbManager.update(updateRowValue, "requestnumber=" + requestKeyValue, null);
 
             view.releaseSavingSubmitButton();
-            Toast.makeText(getApplicationContext(), "Request resource is updated", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Request resource is updated", Toast.LENGTH_SHORT).show();
             cursor.close();
 
         } else { // Insert
@@ -154,7 +154,7 @@ public class MainDataActivity extends Activity implements ViewForMainDataActivit
             mDbManager.insert( addRowValue );
 
             view.releaseSavingSubmitButton();
-            Toast.makeText(getApplicationContext(), "Request resource is inserted", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Request resource is inserted", Toast.LENGTH_SHORT).show();
             cursor.close();
         }
     }
@@ -163,7 +163,7 @@ public class MainDataActivity extends Activity implements ViewForMainDataActivit
     public void onClickHeaderCreation( ) {
 
         if(headerLists.size() == 9) {
-            Toast.makeText(getApplicationContext(), "You can't create header more than 9", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "You can't create header more than 9", Toast.LENGTH_SHORT).show();
         } else {
             Intent intent = new Intent(this, HeaderCreationActivity.class);
             startActivityForResult(intent, REQUEST_HEADER_ADD);
@@ -227,10 +227,10 @@ public class MainDataActivity extends Activity implements ViewForMainDataActivit
                     e.printStackTrace();
                 }
             } else {
-                Toast.makeText(getApplicationContext(), "Please modify the Accept header as follows\n ex) application/xml, application/json" , Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Please modify the Accept header as follows\n ex) application/xml, application/json" , Toast.LENGTH_SHORT).show();
             }
         } else {
-            Toast.makeText(getApplicationContext(), "Please fill in the Accept header is mandatory field\n ex) application/xml, application/json" , Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Please fill in the Accept header is mandatory field\n ex) application/xml, application/json" , Toast.LENGTH_SHORT).show();
         }
     }
 

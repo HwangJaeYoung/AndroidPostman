@@ -15,6 +15,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import cz.msebera.android.httpclient.Header;
 import onem2m.keti.androidpostman.R;
@@ -148,8 +149,6 @@ public class ViewForMainDataActivity extends AbstractViewForActivity {
             public void onClick(View v) {
                 /*** Collecting the all information about oneM2M ***/
 
-                Log.i("testing", "onclick saving data");
-
                 // Operation
                 String operationItem = operation;
 
@@ -166,7 +165,20 @@ public class ViewForMainDataActivity extends AbstractViewForActivity {
         btBodyXMLFormat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if(selectedButton == false) {
+
+                    for(int i = 0; i < headerLists.size(); i++) {
+                        if(headerLists.get(i).getHeaderName().toUpperCase().equals("CONTENT-TYPE")) {
+                            Log.i("testing", "Origin String : " + headerLists.get(i).getHeaderValue());
+                            String replaceString = headerLists.get(i).getHeaderValue().replace("json", "xml");
+                            MainHeaderItem updatedHeader = new MainHeaderItem(headerLists.get(i).getHeaderName(), replaceString);
+                            headerLists.set(i, updatedHeader);
+                            Log.i("testing", "Replace String : " + replaceString);
+                            break;
+                        }
+                    }
+
                     selectedButton = true;
                     jsonBody = etBodyWindow.getText().toString();
                     etBodyWindow.setText(xmlBody);
@@ -179,6 +191,18 @@ public class ViewForMainDataActivity extends AbstractViewForActivity {
             public void onClick(View v) {
 
                 if(selectedButton == true) {
+
+                    for(int i = 0; i < headerLists.size(); i++) {
+                        if(headerLists.get(i).getHeaderName().toUpperCase().equals("CONTENT-TYPE")) {
+                            Log.i("testing", "Origin String : " + headerLists.get(i).getHeaderValue());
+                            String replaceString = headerLists.get(i).getHeaderValue().replace("xml", "json");
+                            MainHeaderItem updatedHeader = new MainHeaderItem(headerLists.get(i).getHeaderName(), replaceString);
+                            headerLists.set(i, updatedHeader);
+                            Log.i("testing", "Replace String : " + replaceString);
+                            break;
+                        }
+                    }
+
                     selectedButton = false;
                     xmlBody = etBodyWindow.getText().toString();
                     etBodyWindow.setText(jsonBody);

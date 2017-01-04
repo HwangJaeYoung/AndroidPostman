@@ -156,7 +156,7 @@
                         android:text="Body"
                         android:textColor="#808a99"
                         android:textSize="18sp" />
-                    \
+
                     <Button
                         android:id="@+id/bt_body_json_format"
                         android:layout_width="55dp"
@@ -228,7 +228,7 @@
                     android:layout_width="150dp"
                     android:layout_height="50dp"
                     android:layout_gravity="center"
-                    android:background="#7dc681"
+                    android:background="@drawable/save_request_button"
                     android:text="Saving Data"
                     android:textColor="#fff"
                     android:textSize="15sp" />
@@ -254,7 +254,7 @@
                     android:layout_width="150dp"
                     android:layout_height="50dp"
                     android:layout_gravity="center"
-                    android:background="#7dc681"
+                    android:background="@drawable/save_request_button"
                     android:text="Send Request"
                     android:textColor="#fff"
                     android:textSize="15sp" />
